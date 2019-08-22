@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./main.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    </head>
+    <body onresize="resizePolls">
+<canvas id="canvas"></canvas>
+<div class="container-fluid">
+  <div class="row" id="header">
+    <div class="col-sm" id="logo">
+			<img src="http://res.cloudinary.com/dfpvu7r4b/image/upload/v1526617561/Logo_caeiig.png">
+    </div>
+		
+    <div class="col-sm" id="welcomeMessage">
+			<p id="biggerFont">Welcome back, <span id="username">Cylthus</span>!</p>
+    </div>
+		<div class="col-sm" id="createOrLogout">
+			<p>
+				<span id="createPollButton">
+					Create Poll
+				</span> 
+				<span style="color:#c92727">
+					|
+				</span> 
+				<span id="logoutButton">
+					Logout
+				</span>
+			</p>
+    </div>
+  </div>
+</div>
+<div id="polls">
+     <div class="pollButton">
+            <p id="pollName">Fuck your shit</p>
+            <p>Votes: 4</p>
+            <p id="author">Author: Cylth</p>
+        </div>
+</div>
+<div id="right-content">
+    <div id="pollInfo">
+        
+    </div>
+</div>
+<div id="body">
+    <div id="content">
+        <div id="loginForm">
+            <p style="font-size:20px">Login!</p>
+            <input type="text" id="usernameField" placeholder="Username...">
+            <input type="password" id="password" placeholder="Password...">
+            <div id="login"><p>Login</p></div>
+            <p id="needAccount">Need an account? <span id="registerAccountClick">Register</span></p>
+            <p id="invalidLogin">*User/Password not found.</p>
+        </div>
+        <div id="registerForm">
+            <p style="font-size:20px">Sign up!</p>
+            <p id="disclaimer">* Age and country are optional parameters used to provide additional poll data</p>
+            <input type="text" id="registerusernameField" placeholder="Username...">
+            <p id="userExistsAlert">*Username already exists, please choose another.</p>
+            <input type="password" id="registerpassword" placeholder="Password..."> 
+            <p id="passwordToShortAlert">*Password must be at least 6 characters.</p>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password...">
+            <p id="nonMatchPassword">*Passwords must match.</p>
+            <div id="idk">
+               
+                <select name="age" id="age" placeholder="age">
+                    <option value="hide" disabled selected>--Age--</option>
+                </select>
+                
+                <input type="text" id="country" placeholder="Country">
+                
+            </div>
+            <div id="register"><p>Register</p></div>
+            <p id="haveAccount">Have an account? <span id="loginAccountClick">Login</span></p>
+            <p id="successfulSignup">Sign up successful!</p>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <p>An app created by Conner Isaacs</p>	
+</div>
+<script src="./main.js"></script>
+<script src="./events.js"></script>
+</body>
+</html>

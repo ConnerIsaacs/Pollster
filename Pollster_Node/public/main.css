@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+html, body{
+	width:100%;
+	height:100%;
+	color:white;
+    margin:0px;
+}
+#polls{
+    width: 0px;
+    background-color: #28272D;
+	display:none;
+	float:left;
+	}
+#right-content{
+	width:70%;
+	float:right;
+	display:none;
+	justify-content: center;
+	align-items:center;
+}
+#pollInfo{
+	background-color:white;
+	position:relative;
+	width:80%;
+	opacity:0;
+	height:90%;
+	border:3px solid grey;
+	border-radius:15px;
+}
+#logo{
+    width:33%;
+}
+#welcomeMessage{
+    width:50%;
+}
+#createOrLogout{
+    width:27%;
+}
+
+#userExistsAlert, #passwordToShortAlert,#nonMatchPassword,#invalidLogin{
+	font-size:12px;
+	color:red;
+	display:none;
+}
+#successfulSignup{
+	display: none;
+}
+#logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+#welcomeMessage p, #createOrLogout p{
+    float:right;
+}
+#createOrLogout p{
+    margin-right:10px;
+}
+#squares{
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:-2;
+	overflow:hidden
+}
+#test{
+	height:100px;
+	width:100px;
+	background-color:rgba(225, 99, 79, .5);
+	position:absolute;
+  opacity:1;
+}
+#body{
+	height:400px;
+	width:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	transition: .5s opacity;
+}
+
+#header{
+    display:flex;
+    align-items:center;
+}
+#createOrLogout{
+	margin-right: 10%;
+}
+#welcomeMessage, #createOrLogout{
+    float:right;
+}
+#welcomeMessage p, #createOrLogout{
+	display:none;
+}
+#loginForm, #registerForm{
+	width:100%;
+	padding:20px;
+	max-width:300px;
+	height:auto;
+	float:left;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	color:#565656;
+}
+#needAccount, #haveAccount{
+	margin-top:10px;
+}
+#idk{
+    display:flex;
+	width:100%;
+}
+#age{
+	width:30%;
+	float:left;
+	height:20px;
+	margin-right:10%;
+	margin-top:10px;
+	color:#565656;
+	border-radius: 5px;
+	outline:none;
+}
+
+#country{
+	width:60%;
+	float:left;
+	margin-left:5%;
+}
+
+#disclaimer{
+	font-size:10px;
+}
+input{
+	width:100%;
+	outline:none;
+	padding-left:5px;
+	border:0px;
+	border-bottom:1px solid lightgrey;
+	margin-top:10px;
+	font-size:17px;
+}
+#login, #register{
+	text-align:center;
+	background-color:#e1634f;
+	width:75%;
+	color:white;
+}
+#registerAccountClick, #loginAccountClick{
+	color:#e1634f;
+}
+#registerAccountClick:hover, #loginAccountClick:hover{
+	cursor:pointer;
+}
+#content{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	width:25%;
+	background-color:white;
+	border:3px solid grey;
+	padding:20px;
+	border-radius:15px;
+}
+#login, #register{
+	margin-top:10px;
+	border-radius:5px;
+	transition:.5s background-color;
+}
+
+#header{
+	height:auto;
+	min-height:50px;
+	background-color:#37393a;
+}
+#biggerFont{
+	font-size:20px;
+}
+p{
+	padding:0px;
+	margin:0px;
+	font-family:Open Sans;
+	font-weight:100;
+}
+#username{
+	color:#c92727;
+	font-weight:900;
+}
+img{
+	width:100%;
+	max-width:150px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+#createPollButton:hover, #logoutButton:hover{
+	pointer-events: auto;
+	color:#C92727;
+	cursor:pointer;
+	transition:.5s color;
+}
+#body, body{
+	pointer-events: none;
+}
+canvas{
+	position:fixed;
+	z-index:-1;
+	pointer-events: auto;
+}
+#header{
+	pointer-events: auto;
+}
+#content{
+	pointer-events: auto;
+}
+#footer{
+	background-color:grey;
+	width:100%;
+	position:absolute;
+	bottom:0px;
+	background-color:#37393a;
+}
+#footer p{
+	float:right;
+	margin-right:5%;
+	font-size:10px;
+	padding:5px;
+}
+#login:hover, #register:hover, #pollSubmit:hover{
+	background-color:#cc6059;
+	cursor:pointer;
+}
+#creatingPoll{
+	color:#cc6059;
+	font-family: Open sans;
+}
+#registerForm{
+	display:none;
+}
+#polls, .pollButton{
+	pointer-events: auto;
+}
+.pollButton{
+	color:lightgrey;
+	font-size:12px;
+	border-bottom:1px solid #4B4C51;
+	background-color:#28272D;
+	overflow:hidden;
+	transition:.2s background-color;
+}
+.pollButton:hover{
+	background-color:#18171b;
+	cursor:pointer;
+}
+
+#darkOverlay{
+	position:absolute;
+	z-index:200;
+	width:100%;
+	height:100%;
+	pointer-events:auto;
+	background-color:rgba(0,0,0,.5);
+}
+.pollButton p{
+	width: calc(50% - 20px);;
+	float:left;
+	margin-bottom:5px;
+	margin-left:10px;
+}
+#pollName{
+	width:100%;
+	font-size:15px;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:10px;
+}
+#author{
+	text-align:right;
+	margin-right:10px;
+	margin-left:0px;
+}
+
+#createPollForm{
+	width:50%;
+	pointer-events: auto;
+	background-color:white;
+	border:3px solid grey;
+	position:absolute;
+	transform:translate(-50%,-50%);
+	z-index:201;
+	left:50%;
+	top:50%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction: column;
+	border-radius:15px;
+	box-shadow:0px 0px 10px black;
+}
+#pollSubmit{
+	width:20%;
+	height:auto;
+	padding: 5px 0px 5px 0px;
+	background-color:#e1634f;
+	display:flex;
+	justify-content:center;
+	align-content: center;
+	border-radius:10px;
+	font-family:Open sans;
+	margin:10px 0px 10px 0px;
+}
+#options{
+	display:flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items:center;
+	width:100%;
+}
+.option{
+	border-bottom: 1px solid grey;
+	width:100%;
+}
+#createPollForm input{
+	width:50%;
+}
+#addOption{
+	font-family:open sans;
+	font-weight:900;
+	color:grey;
+}
+#addOption:hover{
+	background-color:lightgrey;
+}
+@media only screen and (max-width: 300px) {
+    /* For mobile phones: */
+    #header p {
+		text-align:center;
+    }
+	#content{
+		padding:0px;
+	}
+}
+@media only screen and (max-width: 650px) {
+    /* For mobile phones: */
+    #polls{
+		width:100%;
+		height:30%;
+	}
+	#right-content{
+	width:100%;
+	height:70%;
+}
+    #header{
+        flex-direction:column;
+    }
+    #welcomeMessage, #createOrLogout{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+		margin-right:0px;
+		text-align:center;
+		width:100%;
+    }
+	#createOrLogout p{
+		float:none;
+	}
+	#loginForm, #registerForm{
+		width:90%;
+	}
+	#content{
+		width:80%;
+	}
+}
+@media only screen and (max-width: 650px) and (min-width:575px) {
+    /* For mobile phones: */
+    #welcomeMessage, #createOrLogout{
+        margin-top:5px;
+    }
+        #logo, #welcomeMessage, #createOrLogout{
+        width:100%;
+    }
+
+}
+	
+@media only screen and (max-width: 840px) and (min-width:500px) {
+    /* For mobile phones: */
+        #logo, #welcomeMessage, #createOrLogout{
+        width:100%;
+    }
+
+}
+@media only screen and (max-width: 500px) {
+    #content {
+		margin-top:60px;
+        flex-direction:column;
+    }
+    #logo, #welcomeMessage, #createOrLogout{
+        width:100%;
+    }
+	#loginForm, #registerForm{
+		height:auto;
+		margin:5px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    /* For mobile phones: */
+    #logo, #welcomeMessage, #createOrLogout{
+        width:100%;
+    }
+	
+	#loginForm, #registerForm{
+		height:auto;
+		margin:10px;
+        width:90%;
+    }
+}
+
+@keyframes expandwidth{
+	0%{
+		width:0%;
+	}
+	100%{
+		width:30%;
+	}
+}
+
+
+/*---------------Possibilities for dot directions--------------------*/
+
+@keyframes possibility0{
+	100%{
+		transform:translate(200%,200%);
+		opacity:0;
+	}
+}
+
+@keyframes possibility1{
+	100%{
+		transform:translate(-200%,-200%);
+		opacity:0;
+	}
+}
+@keyframes possibility2{
+	100%{
+		transform:translate(-100%,-200%);
+		opacity:0;
+	}
+}
+@keyframes possibility3{
+	100%{
+		transform:translate(-200%,-100%);
+		opacity:0;
+	}
+}
+
+/*----------------Fading animations-----------------*/
+@keyframes fadeIn{
+	0%{
+		opacity:0
+	}
+	100%{
+		opacity:1;
+	}
+}
+
+
+@keyframes fadeOut{
+	0%{
+		opacity:1;
+	}
+	100%{
+		opacity:0;
+	}
+}
