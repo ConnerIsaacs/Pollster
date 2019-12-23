@@ -8,7 +8,11 @@ const Schema = mongoose.Schema;
 var data = new Schema({
   Username: String,
   Password: String,
-  Age: String
+  Age: String,
+  Polls: [Number],
+  userRValue: Number,
+  userGValue: Number,
+  userBValue: Number
 },{timestamps:true});
 
 //create model

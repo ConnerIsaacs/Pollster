@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="./main.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-    </head>
+<head>
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
     <body onresize="resizePolls">
 <canvas id="canvas"></canvas>
 <div class="container-fluid">
-  <div class="row" id="header">
-    <div class="col-sm" id="logo">
-			<img src="http://res.cloudinary.com/dfpvu7r4b/image/upload/v1526617561/Logo_caeiig.png">
+    <div class="row" id="header">
+        <div class="col-sm" id="logo">
+            <img src="http://res.cloudinary.com/dfpvu7r4b/image/upload/v1526617561/Logo_caeiig.png">
+        </div>
+
+        <div class="col-sm" id="welcomeMessage">
+            <p id="biggerFont">Welcome back, <span id="username" class="changeColors"></span>!</p>
+        </div>
+        <div class="col-sm" id="createOrLogout">
+            <p>
+                <span id="createPollButton" class="changeHoverColors">
+                    Create Poll
+                </span>
+                <span style="color:#c92727" class="changeColors">
+                    |
+                </span>
+                <span id="logoutButton" class="changeHoverColors">
+                    Logout
+                </span>
+
+            </p>
+
+        </div>
+        <div class="col-sm" id="settings">
+            <p class="changeHoverColors">
+                Options
+            </p>
+        </div>
     </div>
-		
-    <div class="col-sm" id="welcomeMessage">
-			<p id="biggerFont">Welcome back, <span id="username">Cylthus</span>!</p>
-    </div>
-		<div class="col-sm" id="createOrLogout">
-			<p>
-				<span id="createPollButton">
-					Create Poll
-				</span> 
-				<span style="color:#c92727">
-					|
-				</span> 
-				<span id="logoutButton">
-					Logout
-				</span>
-			</p>
-    </div>
-  </div>
 </div>
 <div id="polls">
-     <div class="pollButton">
-            <p id="pollName">Fuck your shit</p>
-            <p>Votes: 4</p>
-            <p id="author">Author: Cylth</p>
-        </div>
 </div>
 <div id="right-content">
     <div id="pollInfo">
+        <h2 id="right-contentTitle">Click on a poll to vote / see the results!</h2>
         
     </div>
 </div>

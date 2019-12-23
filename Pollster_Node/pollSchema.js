@@ -12,7 +12,6 @@ var data = new Schema({
     Option:String,
     Votes:Number
   }],
-  Voters:[String],
 },{timestamps:true});
 
 //create model
