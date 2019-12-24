@@ -13,6 +13,22 @@ html, body{
     align-content:center;
     justify-content:center;
 	}
+#searchPolls {
+    height: 10%;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+#search {
+    width:80%;
+    border:1px solid white;
+    background-color:#28272D;
+    color:white;
+    border-radius:15px;
+    padding:2px;
+    padding-left:15px;
+}
 #right-content{
 	width:70%;
 	float:right;

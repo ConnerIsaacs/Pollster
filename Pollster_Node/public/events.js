@@ -23,6 +23,9 @@ function updateUserColor() {
 
 var hovers = document.getElementsByClassName("changeHoverColors");
 
+function addSearchBar() {
+    document.getElementById("polls").insertAdjacentHTML("afterbegin", "<div id='searchPolls'><input type='text' id='search' placeholder='Search Polls'/></div>");
+}
 function resizePolls(){
     if(parseInt(window.innerWidth)>650){
         var x = document.getElementById("header").offsetHeight;
@@ -266,8 +269,8 @@ function getChartColors() {
 }
 
 socket.on("login", (data) =>{
+   
     var a = document.getElementById("polls");
-
     //Set username and password
     localStorage.setItem("user", data.username);
     localStorage.setItem("password", data.password);
@@ -283,12 +286,11 @@ socket.on("login", (data) =>{
     for (var i = 0; i < m.length; i++) {
         m[i].style.color = options.userColor;
     }
-
+    addSearchBar();
     //Add all the polls to the left side
     for (var i = 0; i < data.polls.length; i++) {
-        a.insertAdjacentHTML("afterbegin", "<div class='pollButton' id='" + data.polls[i].pollID + "'><p id='pollName'>" + data.polls[i].Question + "</p><p>Votes: " + data.polls[i].totalVotes + "</p><p id='author'>Author: " + data.polls[i].PollCreator + "</p></div>");
+        a.insertAdjacentHTML("beforeend", "<div class='pollButton' id='" + data.polls[i].pollID + "'><p id='pollName'>" + data.polls[i].Question + "</p><p>Votes: " + data.polls[i].totalVotes + "</p><p id='author'>Author: " + data.polls[i].PollCreator + "</p></div>");
     }
-
     //REcolor particles to user's preferred color
     for (var i = 0; i < particles.length; i++) {
         particles[i].color = options.userColor;
