@@ -476,6 +476,7 @@ float:left;
 @media only screen and (max-width: 650px) {
     /* For mobile phones: */
     #polls{
+        animation:none;
 		width:100%;
 		height:30%;
 	}

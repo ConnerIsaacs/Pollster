@@ -253,7 +253,7 @@ function updateUserColor() {
     function fadeLoginForm(){
         document.getElementById("body").style.display = "none";
         document.getElementById("polls").style.display = "block";
-        document.getElementById("polls").addEventListener("animationend", pollsInEnd());
+        document.getElementById("polls").addEventListener("animationend", pollsInEnd);
         document.getElementById("polls").style.animation = ".2s linear expandwidth forwards";
     }
 
