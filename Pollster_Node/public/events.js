@@ -328,7 +328,7 @@ function updateUserColor() {
 
     socket.on("pollCreated", () => {
         overlayClick();
-        document.getElementById("polls").innerHTML = "";
+        document.getElementById("pollButtons").innerHTML = "";
         socket.emit("login", {
             username: localStorage.getItem("user"),
             password: localStorage.getItem("password")
@@ -409,8 +409,8 @@ function updateUserColor() {
         document.getElementById("right-content").style.display = "none";
         document.getElementById("body").style.animation = ".4s linear fadeIn";
         document.getElementById("body").style.display = "flex";
-        document.getElementById("polls").innerHTML = "";
-
+        document.getElementById("pollButtons").innerHTML = "";
+        document.getElementById("searchPolls").remove();
         options.userRValue = "212";
         options.userGValue = "120";
         options.userBValue = "114";
