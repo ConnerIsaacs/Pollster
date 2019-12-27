@@ -1,2 +1,0 @@
-# Pollster
-polling web application
