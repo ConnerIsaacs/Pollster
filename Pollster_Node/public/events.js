@@ -19,9 +19,8 @@ const registerBtn = document.getElementById("register");
 var loginUserField = document.getElementById("usernameField");
 var loginPassword = document.getElementById("password");
 var x = document.getElementById("header").offsetHeight;
-var y = document.getElementById("footer").offsetHeight;
-document.getElementById("polls").style.height = "calc(100% - " + (x+y) + "px)";
-document.getElementById("right-content").style.height = "calc(100% - " + (x+y) + "px)";
+document.getElementById("polls").style.height = "calc(100% - " + (x) + "px)";
+document.getElementById("right-content").style.height = "calc(100% - " + (x) + "px)";
 
 function updateUserColor() {
     options.userColor = "rgb(" + options.userRValue + "," + options.userGValue + "," + options.userBValue + ")";
@@ -40,13 +39,17 @@ function updateUserColor() {
     function resizePolls(){
         if(parseInt(window.innerWidth)>650){
             var x = document.getElementById("header").offsetHeight;
-            var y = document.getElementById("footer").offsetHeight;
-            document.getElementById("polls").style.height = "calc(100% - " + (x+y) + "px)";
-            document.getElementById("right-content").style.height = "calc(100% - " + (x+y) + "px)";
+            document.getElementById("polls").style.height = "calc(100% - " + (x) + "px)";
+            document.getElementById("right-content").style.height = "calc(100% - " + (x) + "px)";
             document.getElementById("polls").style.width = "30%";
         }
-        else{
+        else {
+            document.getElementById("right-content").width = "100%";
             document.getElementById("polls").style.width = "100%";
+            if (localStorage.getItem("user") != null) {
+                document.getElementById("welcomeMessage").style.display = "flex";
+                document.getElementById("createOrLogout").style.display = "flex";
+            }
         }
     }
 
@@ -281,7 +284,6 @@ function updateUserColor() {
     }
 
     socket.on("login", (data) =>{
-   
         var a = document.getElementById("polls");
         //Set username and password
         localStorage.setItem("user", data.username);
@@ -314,6 +316,7 @@ function updateUserColor() {
         document.getElementById("right-contentTitle").style.color = options.userColor;
         document.getElementById("biggerFont").style.display = "block";
         document.getElementById("createOrLogout").style.display = "block";
+        document.getElementById("welcomeMessage").style.display = "flex";
         document.getElementById("settings").style.display = "block";
         document.getElementById("username").innerHTML = localStorage.getItem("user");
         document.getElementById("invalidLogin").style.display = "none";
@@ -400,6 +403,8 @@ function updateUserColor() {
     document.getElementById("logoutButton").addEventListener("click", ()=>{
         user= "";
         password = "";
+        localStorage.setItem("user", null);
+        localStorage.setItem("password", null);
         document.getElementById("biggerFont").style.display = "none";
         document.getElementById("createOrLogout").style.display = "none";
         document.getElementById("settings").style.display = "none";
@@ -431,7 +436,7 @@ function updateUserColor() {
     var FPS = 30;
     var width = window.innerWidth;
     var NUM_PARTICLES = 40;
-    var height = window.innerHeight - document.getElementById("header").offsetHeight - document.getElementById("footer").offsetHeight;
+    var height = window.innerHeight - document.getElementById("header").offsetHeight;
     var ctx;
 
     document.getElementById("canvas").style.marginTop = document.getElementById("header").offsetHeight + "px";
@@ -497,7 +502,7 @@ function updateUserColor() {
 
     var render = function () {
         width = window.innerWidth;
-        height = window.innerHeight - document.getElementById("header").offsetHeight - document.getElementById("footer").offsetHeight;
+        height = window.innerHeight - document.getElementById("header").offsetHeight;
         canvas.width = width;
         canvas.height = height;
         ctx.fillStyle = "white";

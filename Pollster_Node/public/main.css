@@ -478,7 +478,7 @@ float:left;
     #polls{
         animation:none;
 		width:100%;
-		height:30%;
+		height:300px;
 	}
 	#right-content{
 	width:100%;
@@ -488,7 +488,7 @@ float:left;
         flex-direction:column;
     }
     #welcomeMessage, #createOrLogout{
-        display:flex;
+        display:none;
         justify-content:center;
         align-items:center;
 		margin-right:0px;
